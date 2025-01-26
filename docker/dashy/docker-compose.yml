@@ -3,8 +3,8 @@ services:
         ports:
             - 48888:8080
         volumes:
-            - ./conf.yml:/app/user-data/conf.yml
-            - ./icons:/app/user-data/item-icons
+            - /shady/dashy/conf.yml:/app/user-data/conf.yml
+            - /shady/dashy/icons:/app/user-data/item-icons
         container_name: dashy
         restart: unless-stopped
         image: lissy93/dashy
