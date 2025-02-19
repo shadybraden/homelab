@@ -2,7 +2,8 @@
 
 ## Table of Contents:
 <details>
-- Hardware
+
+- [Hardware](#Hardware)
 
 - Kubernetes setup
 
