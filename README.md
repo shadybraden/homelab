@@ -1,9 +1,11 @@
 # This is my homelab (in progress)
 
-
-<details>Table of Contents:
+## Table of Contents:
+<details>
 - Hardware
+
 - Kubernetes setup
+
 - Old Docker based homelab
 </details>
 
