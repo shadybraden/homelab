@@ -5,9 +5,9 @@
 
 - [Hardware](#Hardware)
 
-- Kubernetes setup
+- [Kubernetes setup](#Kubernetes)
 
-- Old Docker based homelab
+- [Old Docker based homelab](#Old Docker based homelab)
 </details>
 
 ## Hardware
