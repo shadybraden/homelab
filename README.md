@@ -4,7 +4,9 @@ My current homelab is made up of a [mini PC](https://aoostar.com/products/aoosta
 
 More details found in the docker folder and under [Old Docker based homelab](#Old-Docker-based-homelab)
 
-The goal is to take what I've learned from this and my knowlege of Kubernetes and combine these into a high availibility homelab using GitOps and version control to manage a new shiny cluster.
+The goal is to take what I've learned from this and my knowledge of Kubernetes and combine these into a high availability homelab using GitOps and version control to manage a new shiny cluster.
+
+This is not a comprehensive guide, and expects a level of Linux experience. Things such as installing an OS, ssh, installing docker or updating packages will be treated as prerequisites. 
 
 ## Table of Contents
 
@@ -38,7 +40,7 @@ Currently this is in [testing](#Non-HA-testing-and-config), and one [Mac Mini](h
 
 ### Non-HA testing and config
 
-- install ansible on `shadypc` (my desktop)
+- install Ansible on `shadypc` (my desktop)
 	- `sudo dnf install ansible -y` 
 - use `k3s-ansible` to automate the install and setup of k3s
 	- git clone [the repo](https://github.com/k3s-io/k3s-ansible) 
@@ -50,6 +52,17 @@ Currently this is in [testing](#Non-HA-testing-and-config), and one [Mac Mini](h
 	- update: `ansible-playbook playbooks/upgrade.yml -i inventory.yml -kK`
 	- `sudo kubectl get nodes` from `controller0`.....eyyy all nodes there
 		- in theory, add another node's ip to the inventory.yml and that should add it as a thing.
+- test install Vaultwarden
+	- using this: https://github.com/guerzon/vaultwarden
+	- on `controller0` - `helm repo add vaultwarden https://guerzon.github.io/vaultwarden`
+
+
+
+todo:
+load balancer and ssl certs - Traefik?
+helm? helmfile? something else?
+ArgoCD woo
+how to convert a normal docker container into k3s? where storage?
 
 ## Old Docker based homelab
 
