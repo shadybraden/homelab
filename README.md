@@ -25,7 +25,7 @@ This is not a comprehensive guide, and expects a level of Linux experience. Thin
 The goal is to have 2x Mac Mini's running Fedora Server as k3s controllers, and 2x Intel N100 mini pc's running Fedora Server as worker nodes. 
 
 Currently this is in [testing](#Non-HA-testing-and-config), and one [Mac Mini](https://support.apple.com/en-us/112588) is the controller, and a [Dell OptiPlex 7040](https://www.dell.com/support/manuals/en-us/optiplex-7040-desktop/opti7040mt_om-v1/specifications) with a i5-6500T as the worker.
-    
+
 ## Kubernetes
 
 ### Goals
