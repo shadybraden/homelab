@@ -3,7 +3,8 @@ services:
         container_name: filebrowser
         restart: unless-stopped
         volumes:
-            - /home:/srv/home
+            - /home/holmie:/srv/home
+            - /mnt/4tb:/srv/mounted
             - ./database:/database
             - ./settings.json:/config/settings.json
         environment:
@@ -13,3 +14,4 @@ services:
             - 8060:80
         command: ["-c", "/config/settings.json"] # required, see https://github.com/filebrowser/filebrowser/issues/1898
         image: filebrowser/filebrowser:latest
+# make all folders and files before running this.

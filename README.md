@@ -38,6 +38,19 @@ Currently this is in [testing](#Non-HA-testing-and-config), and one [Mac Mini](h
 
 ### Non-HA testing and config
 
+- install ansible on `shadypc` (my desktop)
+	- `sudo dnf install ansible -y` 
+- use `k3s-ansible` to automate the install and setup of k3s
+	- git clone [the repo](https://github.com/k3s-io/k3s-ansible) 
+		- mine is here: https://github.com/shadybraden/homelab/tree/main/kubernetes/k3s-ansible/
+	- follow the [usage guide](https://github.com/k3s-io/k3s-ansible?tab=readme-ov-file#usage) 
+		- set server host to controller0's ip and the agent to the worker0's ip
+		- set token
+	- `ansible-playbook playbooks/site.yml -i inventory.yml -kK`
+	- update: `ansible-playbook playbooks/upgrade.yml -i inventory.yml -kK`
+	- `sudo kubectl get nodes` from `controller0`.....eyyy all nodes there
+		- in theory, add another node's ip to the inventory.yml and that should add it as a thing.
+
 ## Old Docker based homelab
 
 This is currently running on an [N100 mini pc](https://aoostar.com/products/aoostar-r1-2bay-nas-intel-n100-mini-pc-with-w11-pro-lpddr4-16gb-ram-512gb-ssd).

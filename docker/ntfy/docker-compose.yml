@@ -1,0 +1,16 @@
+services:
+    ntfy:
+        volumes:
+            - ./ntfy:/var/cache/ntfy
+            - ./user.db:/var/lib/ntfy/user.db
+            - ./server.yml:/var/lib/ntfy/server.yml
+        ports:
+            - 8067:80
+        container_name: ntfy
+        environment:
+            - TZ=EST
+        stdin_open: true
+        tty: true
+        restart: unless-stopped
+        image: binwiederhier/ntfy
+        command: serve --cache-file /var/cache/ntfy/cache.db
