@@ -6,6 +6,7 @@
 - Kubernetes setup
 - Old Docker based homelab
 </details>
+
 ## Hardware
 
 The goal is to have 2x Mac Mini's running Fedora Server as k3s controllers, and 2x Intel N100 mini pc's running Fedora Server as worker nodes. 
