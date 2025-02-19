@@ -1,7 +1,7 @@
 # This is my homelab (in progress)
 
-## Table of Contents:
-<details>
+
+<details>Table of Contents:
 - Hardware
 - Kubernetes setup
 - Old Docker based homelab
