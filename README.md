@@ -36,7 +36,8 @@ Currently this is in [testing](#Non-HA-testing-and-config), and one [Mac Mini](h
     - Storage will likely be managed via TrueNAS. I know I just said Fedora Server, but hear me out:
         - TrueNAS installed on bare metal. 2x large HDD's attached and put into a mirror in TrueNAS. Then a VM based on that to actually install k3s on.
         - This has 2 benifits: 1 - TrueNAS is good at Raid. 2 - TrueNAS has built in Restic and Rclone making backups super easy.
-- GitOps via ArgoCD or Flux to this Repo.
+- GitOps via ArgoCD or Flux to this repo.
+- Use the testing hardware below to setup a testing/staging environment, then make a production environment. 
 
 ### Non-HA testing and config
 
