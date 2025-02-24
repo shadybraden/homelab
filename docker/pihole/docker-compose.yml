@@ -1,0 +1,15 @@
+services:
+  pihole:
+    image: pihole/pihole
+    container_name: pihole
+    environment:
+      - FTLCONF_webserver_api_password=password
+      - FTLCONF_dns_upstreams=9.9.9.9;1.1.1.1
+    volumes:
+      - ./etc-pihole:/etc/pihole
+      - ./etc-dnsmasq.d:/etc/dnsmasq.d
+    ports:
+      - 192.168.50.61:53:53/tcp
+      - 192.168.50.61:53:53/udp
+      - "5353:80/tcp"
+    restart: unless-stopped

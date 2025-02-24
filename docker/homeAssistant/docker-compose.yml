@@ -1,0 +1,17 @@
+services:
+    home-assistant:
+#        network_mode: host
+        ports:
+          - 8124:8123
+        container_name: homeassistant
+        privileged: true
+        volumes:
+            - ./homeassistant:/config
+            - /etc/localtime:/etc/localtime:ro
+            - /run/dbus:/run/dbus
+        restart: unless-stopped
+        environment:
+            - TZ=America/New_York
+        image: ghcr.io/home-assistant/home-assistant:stable
+        labels:
+            - "com.centurylinklabs.watchtower.enable=false" # disable auto updates via watchtower

@@ -8,8 +8,3 @@ services:
         container_name: dashy
         restart: unless-stopped
         image: lissy93/dashy
-
-# there should be a file called `conf.yml` in this directory.
-# make it before deploying. Then when you save, the config will be writen there.
-
-# optionally make an icons folder and put icons there. ive been using the format `icons/pihole.png` then in the config put in `pihole.png` to display that image

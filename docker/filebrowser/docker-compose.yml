@@ -4,7 +4,7 @@ services:
         restart: unless-stopped
         volumes:
             - /home/holmie:/srv/home
-            - /mnt/4tb:/srv/mounted
+            - /mnt/hdd:/srv/mounted
             - ./database:/database
             - ./settings.json:/config/settings.json
         environment:
@@ -14,4 +14,3 @@ services:
             - 8060:80
         command: ["-c", "/config/settings.json"] # required, see https://github.com/filebrowser/filebrowser/issues/1898
         image: filebrowser/filebrowser:latest
-# make all folders and files before running this.
