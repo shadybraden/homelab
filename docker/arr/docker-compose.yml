@@ -71,7 +71,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
       - WEBUI_PORT=8081
-      - TORRENTING_PORT=6881
+      - TORRENTING_PORT=<random port>
     volumes:
       - ./qbittorrent_shows:/config
       - /mnt/hdd/arr/shows:/downloads
@@ -88,7 +88,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
       - WEBUI_PORT=8082
-      - TORRENTING_PORT=6881
+      - TORRENTING_PORT=<random port>
     volumes:
       - ./qbittorrent_movies:/config
       - /mnt/hdd/arr/movies:/downloads
