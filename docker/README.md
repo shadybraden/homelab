@@ -5,7 +5,7 @@ The idea here is a single node server. With more than 40 containers, organizatio
 Remeber; if there is a file (for example `settings.json`) in the volumes section of any docker-compose.yml, then that file has to already exist.
 So make sure to run `touch settings.json` first, or docker will make the *FOLDER* `settings.json` instead of the file.
 
-![dashy](docker/dashy/dashy.png "dashy")
+![dashy](dashy/dashy.png "dashy")
 
 What is here:
 
