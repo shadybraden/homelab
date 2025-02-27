@@ -1,6 +1,8 @@
 services:
     filebrowser:
         container_name: filebrowser
+        env_file:
+           - ../env
         restart: unless-stopped
         volumes:
             - /home/holmie:/srv/home
