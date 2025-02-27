@@ -41,3 +41,11 @@ What is here:
 - VaultWarden
 - WatchTower
 - WireGuard
+
+# TODO:
+
+use env file.
+i have a alias: alias dup="sudo docker compose up -d"
+what i will have to change that to: `alias dup="sudo docker compose --env-file ../env -v up -d`
+the plan it to actually use this repo as the docker host spot.
+i.e. go to server's home. `git clone` this repo, then edit the env file as needed. then each service should be all good to go and literally just take running `dup` to work
