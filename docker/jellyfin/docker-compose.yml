@@ -7,8 +7,7 @@ services:
         volumes:
             - ./config:/config
             - ./cache:/cache
-            - /mnt/hdd/MOVIES_jellyfin:/media
-            - /mnt/hdd/arr:/arr
+            - ${jellyfin_media}:/media
         restart: on-failure
         image: lscr.io/linuxserver/jellyfin:latest
         environment:

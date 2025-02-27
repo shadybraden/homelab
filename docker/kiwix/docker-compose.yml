@@ -1,7 +1,7 @@
 services:
     kiwix-serve:
         volumes:
-            - /mnt/hdd/kiwix/zim:/data:ro
+            - ${kiwix_files}:/data:ro
         container_name: kiwix
         restart: on-failure
         ports:

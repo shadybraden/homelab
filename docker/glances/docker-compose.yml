@@ -9,7 +9,6 @@ services:
 #    pid: host
     privileged: true
     environment:
-#      - GLANCES_OPT=-w
       - "GLANCES_OPT=-C /glances/conf/glances.conf -w"
       - PUID=1000
       - PGID=1000

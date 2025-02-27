@@ -1,12 +1,10 @@
 services:
     filebrowser:
         container_name: filebrowser
-        env_file:
-           - ../env
         restart: unless-stopped
         volumes:
-            - /home/holmie:/srv/home
-            - /mnt/hdd:/srv/mounted
+            - ${filebrowser_dir1}:/srv/home
+            - ${filebrowser_dir2}:/srv/mounted
             - ./database:/database
             - ./settings.json:/config/settings.json
         environment:

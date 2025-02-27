@@ -6,10 +6,10 @@ services:
       devices:
           - /dev/net/tun:/dev/net/tun
       environment:
-          - VPN_SERVICE_PROVIDER=VPN_SERVICE_PROVIDER
+          - VPN_SERVICE_PROVIDER=${arr_provider}
           - VPN_TYPE=wireguard
-          - WIREGUARD_PRIVATE_KEY=WIREGUARD_PRIVATE_KEY
-          - WIREGUARD_ADDRESSES=WIREGUARD_ADDRESSES
+          - WIREGUARD_PRIVATE_KEY=${arr_private_key}
+          - WIREGUARD_ADDRESSES=${arr_address}
           - SERVER_CITIES=Adelaide,Amsterdam,"Ashburn VA",Athens,"Atlanta GA",Auckland,Belgrade,Berlin,Bogota,Bratislava,Brisbane,Brussels,Bucharest,Budapest,Calgary,"Chicago IL",Chisinau,Copenhagen,"Dallas TX","Denver CO",Dubai,Dublin,Dusseldorf,Frankfurt,Gothenburg,Helsinki,"Hong Kong","Houston TX",Johannesburg,Kyiv,Lisbon,London,"Los Angeles CA",Luxembourg,Madrid,Malmö,Manchester,Marseille,Melbourne,"Miami FL",Milan,Montreal,"New York NY",Osaka,Oslo,Paris,Perth,"Phoenix AZ",Prague,"Raleigh NC",Riga,"Salt Lake City UT","San Jose CA","Sao Paulo","Seattle WA","Secaucus NJ",Singapore,Skopje,Sofia,Stavanger,Stockholm,Sydney,Tallinn,"Tel Aviv",Tirana,Tokyo,Toronto,Vancouver,Vienna,Warsaw,Zagreb,Zurich
       ports:
           - 8081:8081 # qbittorrent_shows
@@ -29,7 +29,7 @@ services:
       - PORT=7878 #optional
     volumes:
       - ./radarr:/config
-      - /mnt/hdd/arr/movies:/downloads
+      - ${arr_movies_dir}:/downloads
     restart: on-failure
 #    network_mode: service:gluetun_arr
 #    depends_on:
@@ -46,7 +46,7 @@ services:
       - TZ=America/New_York
     volumes:
       - ./sonarr:/config
-      - /mnt/hdd/arr/shows:/downloads
+      - ${arr_shows_dir}:/downloads
     restart: on-failure
 #    network_mode: service:gluetun_arr
 #    depends_on:
@@ -56,12 +56,12 @@ services:
     image: linuxserver/jackett:latest
     container_name: jackett
     restart: on-failure
+    volumes:
+      - ./jackett:/config
     network_mode: service:gluetun_arr
     depends_on:
       gluetun_arr:
         condition: service_healthy
-
-# NEED A CONFIG DIRECTORY ^
 
   qbittorrent_shows:
     image: lscr.io/linuxserver/qbittorrent:latest
@@ -71,10 +71,10 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
       - WEBUI_PORT=8081
-      - TORRENTING_PORT=<random port>
+      - TORRENTING_PORT=${arr_qbittorrent_shows_port}
     volumes:
       - ./qbittorrent_shows:/config
-      - /mnt/hdd/arr/shows:/downloads
+      - ${arr_shows_dir}:/downloads
     restart: on-failure
     network_mode: service:gluetun_arr
     depends_on:
@@ -88,10 +88,10 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
       - WEBUI_PORT=8082
-      - TORRENTING_PORT=<random port>
+      - TORRENTING_PORT=${arr_qbittorrent_movies_port}
     volumes:
       - ./qbittorrent_movies:/config
-      - /mnt/hdd/arr/movies:/downloads
+      - ${arr_movies_dir}:/downloads
     restart: on-failure
     network_mode: service:gluetun_arr
     depends_on:

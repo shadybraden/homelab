@@ -10,7 +10,7 @@ services:
     volumes:
       - ./config:/config
       - ./syncthing:/var/syncthing
-      - /mnt/hdd/syncthing:/syncthing
+      - ${syncthing_dir}:/syncthing
     ports:
       - 8384:8384
       - 22000:22000/tcp

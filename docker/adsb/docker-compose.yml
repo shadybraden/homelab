@@ -15,9 +15,9 @@ services:
       - READSB_DEVICE_TYPE=rtlsdr
       - READSB_RTLSDR_DEVICE=${ADSB_SDR_SERIAL}
       - READSB_RTLSDR_PPM=${ADSB_SDR_PPM}
-      - READSB_LAT=<ENTER YOUR LAT HERE>
-      - READSB_LON=<ENTER YOUR LONG HERE>
-      - READSB_ALT=${FEEDER_ALT_M}m
+      - READSB_LAT=${adsb_lat}
+      - READSB_LON=${adsb_lon}
+      - READSB_ALT=${FEEDER_ALT_M}
       - READSB_GAIN=${ADSB_SDR_GAIN}
       - READSB_RX_LOCATION_ACCURACY=2
       - READSB_STATS_RANGE=true
@@ -68,8 +68,8 @@ services:
       # --------------------------------------------------
       # TAR1090 (Map Web Page) parameters:
       - UPDATE_TAR1090=true
-      - TAR1090_DEFAULTCENTERLAT=<ENTER YOUR LAT HERE>
-      - TAR1090_DEFAULTCENTERLON=<ENTER YOUR LONG HERE>
+      - TAR1090_DEFAULTCENTERLAT=${adsb_lat}
+      - TAR1090_DEFAULTCENTERLON=${adsb_lon}
       - TAR1090_MESSAGERATEINTITLE=true
       - TAR1090_PAGETITLE=${FEEDER_NAME}
       - TAR1090_PLANECOUNTINTITLE=true

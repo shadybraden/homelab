@@ -1,6 +1,5 @@
 services:
     home-assistant:
-#        network_mode: host
         ports:
           - 8124:8123
         container_name: homeassistant
