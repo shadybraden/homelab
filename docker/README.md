@@ -48,7 +48,7 @@ What is here:
 # How to use this repo:
 
 Clone this repo, then go to the docker folder.
-`cp env .env` now use .env as your actual env file.
+`cp env .env` now use .env as your actual env file. Run `chmod 600 .env` to secure it a bit more.
 Edit the `.env` file as needed, then run:
 `docker compose --env-file ../.env -v up -d`
 
