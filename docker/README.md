@@ -51,10 +51,8 @@ the plan it to actually use this repo as the docker host spot.
 i.e. go to server's home. `git clone` this repo, then edit the env file as needed. then each service should be all good to go and literally just take running `dup` to work
 
 How this works:
-- Use the `main` branch for pulling updates, and `live` for actually running.
-- `git branch live && git switch live`
-- `nano docker/env`
+- edit your env file `nano docker/env`
 - something changed? want to use it? or just pull the latest from main
-- to save your config, use `git stash` > `git stash push env`
-- `git switch main && git fetch origin main && git merge origin/main`
+- to save your config, use `git stash push env`
+- `git fetch origin main && git merge origin/main`
 - to recover your env, `git stash apply`
