@@ -48,11 +48,14 @@ What is here:
 # How to use this repo:
 
 Clone this repo, then go to the docker folder.
-Edit the `env` file as needed, then run:
-`docker compose --env-file ../env -v up -d`
+`cp env .env` now use .env as your actual env file.
+Edit the `.env` file as needed, then run:
+`docker compose --env-file ../.env -v up -d`
 
 Now if you want to pull the latest:
 
-- edit your env file `nano docker/env`
-- something changed? want to use it? or just pull the latest from main
+- Edit your env file `nano docker/.env`
+- Something changed? want to use it? or just pull the latest from main
+- Run `git pull` then compare the latest in `env` and decide if you want to add that to your `.env` file.
+
 - run this to save your `env`, but pull the latest `git stash push env && git pull && git stash apply`
