@@ -43,3 +43,5 @@ syncthing_dir=/mnt/syncthing
 wireguard_host=example.com
 wireguard_password_hash=passwordhash
 wireguard_dns_to_use=pihole_or_dns_ip
+
+todo: replace `./` with an env var, so its easy to select a different storage location.
