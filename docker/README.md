@@ -45,7 +45,11 @@ What is here:
 
 # How to use this repo:
 
-Recomended: `alias dup="sudo docker compose --env-file ../env -v up -d`
+Clone this repo, then go to the docker folder.
+Edit the `env` file as needed, then run:
+`docker compose --env-file ../env -v up -d`
+
+Now if you want to pull the latest:
 
 - edit your env file `nano docker/env`
 - something changed? want to use it? or just pull the latest from main
