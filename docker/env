@@ -44,3 +44,4 @@ wireguard_host=example.com
 wireguard_password_hash=passwordhash
 wireguard_dns_to_use=pihole_or_dns_ip
 del
+new_var
