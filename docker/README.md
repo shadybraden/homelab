@@ -48,14 +48,8 @@ What is here:
 # How to use this repo:
 
 Clone this repo, then go to the docker folder.
-`cp env .env` now use .env as your actual env file. Run `chmod 600 .env` to secure it a bit more.
+`cp env .env` now use `.env` as your actual env file. Run `chmod 600 .env && sudo chown root:root .env` to secure it a bit more. (note that this works with docker and probably not podman)
 Edit the `.env` file as needed, then run:
 `docker compose --env-file ../.env -v up -d`
 
-Now if you want to pull the latest:
-
-- Edit your env file `nano docker/.env`
-- Something changed? want to use it? or just pull the latest from main
-- Run `git pull` then compare the latest in `env` and decide if you want to add that to your `.env` file.
-
-- run this to save your `env`, but pull the latest `git stash push env && git pull && git stash apply`
+Now if you want to pull the latest, run `git pull` then compare the latest in `env` to your `.env`.
