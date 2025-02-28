@@ -71,4 +71,4 @@ This is currently running on an [N100 mini pc](https://aoostar.com/products/aoos
 This pc uses Debian and docker to deploy over 3 dozen services.
 A raspberry pi is setup to run Pi-Hole as a DNS server and Nginx.
 
-See the [docker folder](docker) for more info.
+See the [docker folder](docker#docker-compose-based-homelab) for more info.
