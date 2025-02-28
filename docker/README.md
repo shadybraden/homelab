@@ -49,7 +49,9 @@ What is here:
 
 Clone this repo, then go to the docker folder.
 `cp env .env` now use `.env` as your actual env file. Run `chmod 600 .env && sudo chown root:root .env` to secure it a bit more. (note that this works with docker and probably not podman)
+
 Edit the `.env` file as needed, then run:
+
 `docker compose --env-file ../.env -v up -d`
 
 Now if you want to pull the latest, run `git pull` then compare the latest in `env` to your `.env`.
