@@ -56,3 +56,4 @@ How this works:
 - to save your config, use `git stash push env`
 - `git fetch origin main && git merge origin/main`
 - to recover your env, `git stash apply`
+- all together `git stash push env && git fetch origin main && git merge origin/main && git stash apply`
