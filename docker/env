@@ -43,4 +43,3 @@ syncthing_dir=/mnt/syncthing
 wireguard_host=example.com
 wireguard_password_hash=passwordhash
 wireguard_dns_to_use=192.168.50.61
-deleteme=deleteme
