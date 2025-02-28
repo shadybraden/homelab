@@ -53,7 +53,4 @@ i.e. go to server's home. `git clone` this repo, then edit the env file as neede
 How this works:
 - edit your env file `nano docker/env`
 - something changed? want to use it? or just pull the latest from main
-- to save your config, use `git stash push env`
-- `git fetch origin main && git merge origin/main`
-- to recover your env, `git stash apply`
-- all together `git stash push env && git fetch origin main && git merge origin/main && git stash apply`
+- run this to save your `env`, but pull the latest `git stash push env && git pull && git stash apply`
