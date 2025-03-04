@@ -6,6 +6,6 @@ services:
         restart: unless-stopped
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
-            - ./portainer:/data
+            - ${CONFIG_STORAGE_LOCATION}/portainer:/data
             - /etc/localtime:/etc/localtime:ro
         image: portainer/portainer-ce

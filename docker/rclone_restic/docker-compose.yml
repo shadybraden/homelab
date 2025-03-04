@@ -9,7 +9,7 @@ services:
     ports:
       - "5572:5572" # add this port if you're not using a proxy
     volumes:
-      - ./rclone.conf:/config/rclone/rclone.conf # location of your rclone config file (i.e., where the remote and secrets are stored)
+      - ${CONFIG_STORAGE_LOCATION}/rclone/rclone.conf:/config/rclone/rclone.conf # location of your rclone config file (i.e., where the remote and secrets are stored)
 #      - ./sync_script:/sync_script # script to allow remote execution of backups (e.g., rclone copy --checksum --verbose --transfers 1 --checkers 4 --contimeout 60s --timeout 300s --retries 3 --low-level-retries 10 --stats 1s /YOUR_FOLDER YOUR_REMOTE:REMOTE_FOLDER/sync_script)
       - ${rclone_restic_backups}:/data/restic # data to upload
     environment:

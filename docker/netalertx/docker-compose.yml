@@ -2,8 +2,8 @@ services:
     netalertx:
         network_mode: host
         volumes:
-            - ./config:/app/config
-            - ./db:/app/db
+            - ${CONFIG_STORAGE_LOCATION}/netalertx/config:/app/config
+            - ${CONFIG_STORAGE_LOCATION}/netalertx/db:/app/db
             - ${pihole_piholeFTLdb}:/etc/pihole/pihole-FTL.db:ro
         environment:
             - TZ=America/New_York

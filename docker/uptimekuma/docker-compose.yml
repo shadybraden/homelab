@@ -4,6 +4,6 @@ services:
         ports:
             - 3001:3001
         volumes:
-            - ./uptime-kuma:/app/data
+            - ${CONFIG_STORAGE_LOCATION}/uptime-kuma:/app/data
         container_name: uptime-kuma
         image: louislam/uptime-kuma

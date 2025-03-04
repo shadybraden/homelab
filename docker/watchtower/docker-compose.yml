@@ -2,7 +2,7 @@ services:
   watchtower:
     container_name: watchtower
     volumes:
-        - ./config/config.json:/config.json
+        - ${CONFIG_STORAGE_LOCATION}/watchtower/config/config.json:/config.json
         - /var/run/docker.sock:/var/run/docker.sock
     image: containrrr/watchtower
     environment:

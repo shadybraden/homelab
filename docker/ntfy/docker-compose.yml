@@ -1,9 +1,9 @@
 services:
     ntfy:
         volumes:
-            - ./ntfy:/var/cache/ntfy
-            - ./user.db:/var/lib/ntfy/user.db
-            - ./server.yml:/var/lib/ntfy/server.yml
+            - ${CONFIG_STORAGE_LOCATION}/ntfy:/var/cache/ntfy
+            - ${CONFIG_STORAGE_LOCATION}/ntfy/user.db:/var/lib/ntfy/user.db
+            - ${CONFIG_STORAGE_LOCATION}/nginx/server.yml:/var/lib/ntfy/server.yml
         ports:
             - 8067:80
         container_name: ntfy

@@ -9,7 +9,7 @@ services:
       - "8085:8086" # influxDB admin
     volumes:
       - /run/udev:/run/udev:ro
-      - ./config:/opt/scrutiny/config
-      - ./influxdb:/opt/scrutiny/influxdb
+      - ${CONFIG_STORAGE_LOCATION}/scrutiny/config:/opt/scrutiny/config
+      - ${CONFIG_STORAGE_LOCATION}/scrutiny/influxdb:/opt/scrutiny/influxdb
     devices:
       - "/dev/sda"

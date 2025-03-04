@@ -5,7 +5,7 @@ services:
         container_name: homeassistant
         privileged: true
         volumes:
-            - ./homeassistant:/config
+            - ${CONFIG_STORAGE_LOCATION}/homeassistant:/config
             - /etc/localtime:/etc/localtime:ro
             - /run/dbus:/run/dbus
         restart: unless-stopped

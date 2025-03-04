@@ -5,10 +5,10 @@ services:
             - 8086:80
         restart: unless-stopped
         volumes:
-            - ./nextcloud/html:/var/www/html
-            - ./nextcloud/apps:/var/www/html/custom_apps
-            - ./nextcloud/config:/var/www/html/config
-            - ./nextcloud/data:/var/www/html/data
+            - ${CONFIG_STORAGE_LOCATION}/nextcloud/html:/var/www/html
+            - ${CONFIG_STORAGE_LOCATION}/nextcloud/apps:/var/www/html/custom_apps
+            - ${CONFIG_STORAGE_LOCATION}/nextcloud/config:/var/www/html/config
+            - ${CONFIG_STORAGE_LOCATION}/nextcloud/data:/var/www/html/data
         image: nextcloud:latest
 # the nextcloud folder wants to be in the group www-data
 # sudo chown -R www-data:www-data nextcloud/

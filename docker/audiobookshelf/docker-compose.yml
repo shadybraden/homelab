@@ -6,8 +6,8 @@ services:
         volumes:
             - ${audiobookshelf_audiobooks}:/audiobooks:ro
             - ${audiobookshelf_podcasts}:/podcasts:ro
-            - ./config:/config
-            - ./metadata:/metadata
+            - ${CONFIG_STORAGE_LOCATION}/audiobookshelf/config:/config
+            - ${CONFIG_STORAGE_LOCATION}/audiobookshelf/metadata:/metadata
         environment:
             - TZ=America/New_York
         restart: on-failure

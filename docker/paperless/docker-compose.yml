@@ -3,13 +3,13 @@ services:
     image: docker.io/library/redis:7
     restart: unless-stopped
     volumes:
-      - ./redisdata:/data
+      - ${CONFIG_STORAGE_LOCATION}/paperless/redisdata:/data
 
   db:
     image: docker.io/library/postgres:16
     restart: unless-stopped
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - ${CONFIG_STORAGE_LOCATION}/paperless/pgdata:/var/lib/postgresql/data
     environment:
       POSTGRES_DB: paperless
       POSTGRES_USER: ${paperless_db_user}
@@ -24,10 +24,10 @@ services:
     ports:
       - "8047:8000"
     volumes:
-      - ./data:/usr/src/paperless/data
-      - ./media:/usr/src/paperless/media
-      - ./export:/usr/src/paperless/export
-      - ./consume:/usr/src/paperless/consume
+      - ${CONFIG_STORAGE_LOCATION}/paperless/data:/usr/src/paperless/data
+      - ${CONFIG_STORAGE_LOCATION}/paperless/media:/usr/src/paperless/media
+      - ${CONFIG_STORAGE_LOCATION}/paperless/export:/usr/src/paperless/export
+      - ${CONFIG_STORAGE_LOCATION}/paperless/consume:/usr/src/paperless/consume
 #    env_file: docker-compose.env
     environment:
       PAPERLESS_REDIS: redis://broker:6379

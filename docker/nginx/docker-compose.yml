@@ -7,6 +7,6 @@ services:
       - '81:81'
       - '443:443'
     volumes:
-      - ./data:/data
-      - ./letsencrypt:/etc/letsencrypt
+      - ${CONFIG_STORAGE_LOCATION}/nginx/data:/data
+      - ${CONFIG_STORAGE_LOCATION}/nginx/letsencrypt:/etc/letsencrypt
     container_name: nginx

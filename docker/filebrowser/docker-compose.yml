@@ -5,8 +5,8 @@ services:
         volumes:
             - ${filebrowser_dir1}:/srv/home
             - ${filebrowser_dir2}:/srv/mounted
-            - ./database:/database
-            - ./settings.json:/config/settings.json
+            - ${CONFIG_STORAGE_LOCATION}/filebrowser/database:/database
+            - ${CONFIG_STORAGE_LOCATION}/filebrowser/settings.json:/config/settings.json
         environment:
             - PUID=1000
             - PGID=1000
