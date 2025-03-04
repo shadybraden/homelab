@@ -100,8 +100,8 @@ services:
       #- INFLUXDBV2_BUCKET=${INFLUX_BUCKET}
       #- PROMETHEUS_ENABLE=false
     volumes:
-      - ./globe_history:/var/globe_history
-      - ./graphs1090:/var/lib/collectd
+      - ${CONFIG_STORAGE_LOCATION}/adsb/globe_history:/var/globe_history
+      - ${CONFIG_STORAGE_LOCATION}/adsb/graphs1090:/var/lib/collectd
       - /proc/diskstats:/proc/diskstats:ro
       - /dev:/dev
     tmpfs:

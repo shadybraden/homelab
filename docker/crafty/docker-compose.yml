@@ -11,8 +11,8 @@ services:
         - "19132:19132/udp" # BEDROCK
         - "25500-25600:25500-25600" # MC SERV PORT RANGE
     volumes:
-        - ${CONFIG_STORAGE_LOCATION}/backups:/crafty/backups
-        - ${CONFIG_STORAGE_LOCATION}/logs:/crafty/logs
-        - ${CONFIG_STORAGE_LOCATION}/servers:/crafty/servers
-        - ${CONFIG_STORAGE_LOCATION}/config:/crafty/app/config
-        - ${CONFIG_STORAGE_LOCATION}/import:/crafty/import
+        - ${CONFIG_STORAGE_LOCATION}/crafty/backups:/crafty/backups
+        - ${CONFIG_STORAGE_LOCATION}/crafty/logs:/crafty/logs
+        - ${CONFIG_STORAGE_LOCATION}/crafty/servers:/crafty/servers
+        - ${CONFIG_STORAGE_LOCATION}/crafty/config:/crafty/app/config
+        - ${CONFIG_STORAGE_LOCATION}/crafty/import:/crafty/import
