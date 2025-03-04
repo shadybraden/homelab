@@ -54,3 +54,7 @@ What is here:
 5. Once the `.env` file is setup as desired, `cd <container name>` and see the README.md for that container's specific instructions.
 6. Once satisfied, run this to start the container: `docker compose --env-file ../.env -v up -d`
 7. Now if you want to pull the latest, run `git pull` then compare the latest in `env` to your `.env`.
+
+---
+
+Migrating data note: `sudo cp -r ai/data/ homelab/docker/thing` puts the entire `data` folder into the new `thing` folder. Note the placement of `/`'s
