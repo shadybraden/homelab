@@ -1,3 +1,8 @@
+# Config data is data that should be a little faster to access, is frequently backed up, and not necessarily on a raid array. I like to put this on my ssd/boot drive
+CONFIG_STORAGE_LOCATION=./ # "./" means this current folder. so if you are in the folder `homelab/docker/dashy` then using ./conf.yml will put the conf.yml file at the same level directory as the docker-compose.yml file
+NOT_BACKED_UP_DATA_CONFIG_STORAGE_LOCATION=/home/NOT_BACKED_UP # similar small amounts of data, but no need to back this stuff up.
+BULK_DATA_STORAGE_LOCATION=/mnt # bulk data such as immich photos
+NOT_BACKED_UP_BULK_DATA_STORAGE_LOCATION=/mnt/NOT_BACKED_UP # bulk data such as jellyfin content that doesn't need backups
 adsb_lat=100
 adsb_lon=100
 arr_provider=provider
