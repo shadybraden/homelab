@@ -57,4 +57,4 @@ What is here:
 
 ---
 
-Migrating data note: `sudo cp -r ai/data/ homelab/docker/thing` puts the entire `data` folder into the new `thing` folder. Note the placement of `/`'s
+Migrating data note: `sudo cp -r old/data/ homelab/docker/thing` puts the entire `data` folder into the new `thing` folder. Note the placement of `/`'s
