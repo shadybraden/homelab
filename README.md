@@ -60,7 +60,7 @@ Currently this is in [testing](#Non-HA-testing-and-config), and one [Mac Mini](h
 
 
 todo:
-load balancer and ssl certs - Traefik? *sto?*
+load balancer and ssl certs - Traefik? *istio?*
 helm? helmfile? something else?
 ArgoCD woo
 how to convert a normal docker container into k3s? where storage?

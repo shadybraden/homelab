@@ -7,6 +7,8 @@ NOT_BACKED_UP_DATA_CONFIG_STORAGE_LOCATION=/home/NOT_BACKED_UP
 BULK_DATA_STORAGE_LOCATION=/mnt
 # bulk data such as jellyfin content that doesn't need backups
 NOT_BACKED_UP_BULK_DATA_STORAGE_LOCATION=/mnt/NOT_BACKED_UP
+REVERSE_PROXY_IP=192.168.50.61
+ALL_IPS=0.0.0.0
 adsb_lat=100
 adsb_lon=100
 arr_provider=provider
@@ -54,4 +56,4 @@ wireguard_host=example.com
 wireguard_password_hash=passwordhash
 wireguard_dns_to_use=pihole_or_dns_ip
 
-todo: replace `./` with an env var, so its easy to select a different storage location.
+todo: replace ports with a variable. default to 0.0.0.0, but test using the revers proxy ip for better security, and no http access
