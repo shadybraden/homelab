@@ -7,7 +7,9 @@ NOT_BACKED_UP_DATA_CONFIG_STORAGE_LOCATION=/home/NOT_BACKED_UP
 BULK_DATA_STORAGE_LOCATION=/mnt
 # bulk data such as jellyfin content that doesn't need backups
 NOT_BACKED_UP_BULK_DATA_STORAGE_LOCATION=/mnt/NOT_BACKED_UP
-REVERSE_PROXY_IP=192.168.50.61
+# this is used for a little extra security. if a port is defined like this: `- "${REVERSE_PROXY_IP}:8443:8443"` then that means that only the reverse proxy can acces it (menaing you cant access it from any device at http://ip:8443). however, this does mean that the reverse proxy can, so youll be able to access it from any device THROUGH the reverse proxy. i.e. this will work: https://service.example.com
+# the default for this is set to 0.0.0.0 so that the containers will work without a reverse proxy
+REVERSE_PROXY_IP=0.0.0.0
 LOCAL_HOST=127.0.0.1
 ALL_IPS=0.0.0.0
 adsb_lat=100
@@ -57,5 +59,3 @@ syncthing_dir=/mnt/syncthing
 wireguard_host=example.com
 wireguard_password_hash=passwordhash
 wireguard_dns_to_use=pihole_or_dns_ip
-
-todo: replace ports with a variable. default to 0.0.0.0, but test using the revers proxy ip for better security, and no http access
