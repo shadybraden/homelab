@@ -49,7 +49,7 @@ What is here:
 
 1. `git clone https://github.com/shadybraden/homelab.git` 
 2. `cd homelab/docker/` 
-3. `cp env .env` 
+3. `cp .env.sample .env` 
 4. Now use `nano .env` (or any other text editor) to edit the file `.env` and add in your environment variables. The defaults will allow the container to function, but may not be ideal. For example, all passwords and secrets are simply "password". Once you edit this file, or at any point, run `sudo chmod 600 .env && sudo chown root:root .env` to secure it a bit more. (note that this works with docker and *probably not* podman)
 5. Once the `.env` file is setup as desired, `cd <container name>` and see the README.md for that container's specific instructions.
 6. Once satisfied, run this to start the container: `docker compose --env-file ../.env -v up -d` 
