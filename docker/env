@@ -35,6 +35,7 @@ kiwix_files=/mnt/kiwix
 mealie_db_password=password
 navidrome_music=/mnt/music
 ntfy_host=ntfy.example.com
+pihole_password=password
 pihole_piholeFTLdb=../pihole/etc-pihole/pihole-FTL.db # not tested
 pihole_server_ip=192.168.50.61
 paperless_db_user=paperless

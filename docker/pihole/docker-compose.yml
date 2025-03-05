@@ -3,13 +3,17 @@ services:
     image: pihole/pihole
     container_name: pihole
     environment:
-      - FTLCONF_webserver_api_password=password
+      - FTLCONF_webserver_api_password=${pihole_password}
       - FTLCONF_dns_upstreams=9.9.9.9;1.1.1.1
+      - TZ=America/New_York
+      - FTLCONF_dns_listeningMode=all
     volumes:
-      - ${CONFIG_STORAGE_LOCATION}/pihole/etc-pihole:/etc/pihole
-      - ${CONFIG_STORAGE_LOCATION}/pihole/etc-dnsmasq.d:/etc/dnsmasq.d
+      - ./etc-pihole:/etc/pihole
+      - ./etc-dnsmasq.d:/etc/dnsmasq.d
     ports:
-      - ${pihole_server_ip}:53:53/tcp
-      - ${pihole_server_ip}:53:53/udp
+      - "53:53/tcp"
+      - "53:53/udp"
       - "5353:80/tcp"
     restart: unless-stopped
+    cap_add:
+      - SYS_NICE
