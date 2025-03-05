@@ -12,6 +12,8 @@ This is not a comprehensive guide, and expects a level of Linux experience. Thin
 
 <details>
 
+<summary>Table of Contents</summary>
+
 - [Hardware](#Hardware)
 
 - [Kubernetes setup](#Kubernetes)

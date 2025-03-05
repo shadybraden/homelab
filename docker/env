@@ -8,7 +8,7 @@ BULK_DATA_STORAGE_LOCATION=/mnt
 # bulk data such as jellyfin content that doesn't need backups
 NOT_BACKED_UP_BULK_DATA_STORAGE_LOCATION=/mnt/NOT_BACKED_UP
 REVERSE_PROXY_IP=192.168.50.61
-ALL_IPS=0.0.0.0
+ALL_IPS=127.0.0.1
 adsb_lat=100
 adsb_lon=100
 arr_provider=provider
