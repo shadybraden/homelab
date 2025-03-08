@@ -2,7 +2,7 @@ services:
     server:
         container_name: vaultwarden
         volumes:
-            - ${CONFIG_STORAGE_LOCATION}/vaultwarden/data:/data
+            - ${CONFIG_STORAGE_LOCATION}/vaultwarden:/data
         restart: unless-stopped
         environment:
             - LOG_FILE=/data/vaultwarden.log
