@@ -4,7 +4,7 @@ services:
     image: ghcr.io/mealie-recipes/mealie:nightly
     restart: unless-stopped
     volumes:
-      - - ${CONFIG_STORAGE_LOCATION}/mealie-data:/app/data/
+      - ${CONFIG_STORAGE_LOCATION}/mealie-data:/app/data/
     ports:
       - 9091:9000
     environment:
