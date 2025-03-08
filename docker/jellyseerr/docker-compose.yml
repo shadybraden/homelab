@@ -9,6 +9,6 @@ services:
     ports:
       - 5055:5055
     volumes:
-      - - ${CONFIG_STORAGE_LOCATION}/jellyseerr/config:/app/config
+      - ${CONFIG_STORAGE_LOCATION}/jellyseerr/config:/app/config
       - ${jellyseerr_files}:/data
     restart: unless-stopped
