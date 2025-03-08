@@ -1,7 +1,7 @@
 services:
   stirling-pdf:
     image: stirlingtools/stirling-pdf
-    container_name: scrutiny
+    container_name: stirlingpdf
     ports:
       - '8087:8080'
     volumes:
