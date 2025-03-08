@@ -1,8 +1,8 @@
 #!/bin/bash
-cd /home/user/proxy
+cd /home/user/homelab/docker/proxy
 docker compose pull
 docker compose stop gluetun socks5
-docker compose up -d
+docker compose --env-file ../.env -v up -d
 sleep 10
 COUNTRY=$(curl --socks5 localhost:1080 ifconfig.co/json)
 curl \
