@@ -2,7 +2,7 @@ services:
     nextcloud:
         container_name: nextcloud
         ports:
-            - 8086:80
+            - 8286:80
         restart: unless-stopped
         volumes:
             - ${CONFIG_STORAGE_LOCATION}/nextcloud/html:/var/www/html
