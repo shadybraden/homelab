@@ -5,7 +5,7 @@ services:
         user: 1000:1000
         volumes:
             - ${navidrome_music}:/music:ro
-            - ${CONFIG_STORAGE_LOCATION}/navidrome/data:/data
+            - ${CONFIG_STORAGE_LOCATION}/navidrome:/data
         ports:
             - 4533:4533
         environment:
