@@ -28,7 +28,7 @@ services:
       - TZ=America/New_York
       - PORT=7878 #optional
     volumes:
-      - ./radarr:/config
+      - ${CONFIG_STORAGE_LOCATION}/radarr:/config
       - ${arr_movies_dir}:/downloads
     restart: on-failure
 #    network_mode: service:gluetun_arr
@@ -45,7 +45,7 @@ services:
       - PGID=1000
       - TZ=America/New_York
     volumes:
-      - ./sonarr:/config
+      - ${CONFIG_STORAGE_LOCATION}/sonarr:/config
       - ${arr_shows_dir}:/downloads
     restart: on-failure
 #    network_mode: service:gluetun_arr
@@ -73,7 +73,7 @@ services:
       - WEBUI_PORT=8081
       - TORRENTING_PORT=${arr_qbittorrent_shows_port}
     volumes:
-      - ./qbittorrent_shows:/config
+      - ${CONFIG_STORAGE_LOCATION}/qbittorrent_shows:/config
       - ${arr_shows_dir}:/downloads
     restart: on-failure
     network_mode: service:gluetun_arr
@@ -90,7 +90,7 @@ services:
       - WEBUI_PORT=8082
       - TORRENTING_PORT=${arr_qbittorrent_movies_port}
     volumes:
-      - ./qbittorrent_movies:/config
+      - ${CONFIG_STORAGE_LOCATION}/qbittorrent_movies:/config
       - ${arr_movies_dir}:/downloads
     restart: on-failure
     network_mode: service:gluetun_arr
