@@ -57,7 +57,7 @@ services:
     container_name: jackett
     restart: on-failure
     volumes:
-      - ./jackett:/config
+      - ${CONFIG_STORAGE_LOCATION}/jackett:/config
     network_mode: service:gluetun_arr
     depends_on:
       gluetun_arr:
