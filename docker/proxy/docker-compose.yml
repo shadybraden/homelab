@@ -16,6 +16,8 @@ services:
             - SHADOWSOCKS=on
             - SHADOWSOCKS_LOG=on
             - SHADOWSOCKS_PASSWORD=${proxy_shadowsocks_password}
+            - DOT=off
+            - DNS_PLAINTEXT_ADDRESS=${proxy_dns}
         ports:
             - 8888:8888/tcp # HTTP proxy
             - 8388:8388/tcp # Shadowsocks
