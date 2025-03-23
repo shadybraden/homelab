@@ -11,7 +11,7 @@ services:
       - ${CONFIG_STORAGE_LOCATION}/wg-easy:/etc/wireguard
     ports:
       - "${wireguard_external_port}:${wireguard_external_port}/udp"
-      - "51821:51821/tcp"
+      - "51821:51821/tcp" # web ui port
     restart: unless-stopped
     cap_add:
       - NET_ADMIN
