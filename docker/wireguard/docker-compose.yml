@@ -2,6 +2,7 @@ services:
   wireguard:
     environment:
       - WG_HOST=${wireguard_host} # ip or domain
+      - WG_PORT=${wireguard_external_port}
       - PASSWORD_HASH=${wireguard_password_hash}
       - WG_DEFAULT_DNS=${wireguard_dns_to_use}
       - WG_DEFAULT_ADDRESS=10.8.0.x # range of ips for wg users
