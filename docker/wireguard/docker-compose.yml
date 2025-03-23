@@ -10,7 +10,7 @@ services:
     volumes:
       - ${CONFIG_STORAGE_LOCATION}/wg-easy:/etc/wireguard
     ports:
-      - "${wireguard_external_port}:51820/udp"
+      - "${wireguard_external_port}:${wireguard_external_port}/udp"
       - "51821:51821/tcp"
     restart: unless-stopped
     cap_add:
