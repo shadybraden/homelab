@@ -9,7 +9,7 @@ services:
         image: grafana/grafana
     influxdb:
         ports:
-            - 8088:8086
+            - 8069:8086
         container_name: influxdb
         restart: unless-stopped
         volumes:
