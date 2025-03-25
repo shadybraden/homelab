@@ -4,7 +4,7 @@ services:
             - 3033:3000
         container_name: grafana
         restart: unless-stopped
-        user: $(id -u)
+        user: '0'
         volumes:
             - ${CONFIG_STORAGE_LOCATION}/grafana-storage:/var/lib/grafana
         image: grafana/grafana-oss
