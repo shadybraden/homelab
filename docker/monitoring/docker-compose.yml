@@ -6,7 +6,7 @@ services:
         restart: unless-stopped
         volumes:
             - ${CONFIG_STORAGE_LOCATION}/grafana-storage:/var/lib/grafana
-        image: grafana/grafana
+        image: grafana/grafana-oss
     influxdb:
         ports:
             - 8069:8086
