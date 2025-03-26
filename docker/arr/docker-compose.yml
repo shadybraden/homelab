@@ -27,9 +27,9 @@ services:
       - PGID=1000
       - TZ=America/New_York
       - PORT=7878 #optional
-    volumes:
+    volumes: # idea is a torrents folder for live downloads, and a media folder for radarr to copy the files to once finished
       - ${CONFIG_STORAGE_LOCATION}/arr/radarr:/config
-      - ${arr_movies_dir}:/downloads/media
+      - ${arr_movies_dir}:/downloads
     restart: on-failure
 #    network_mode: service:gluetun_arr
 #    depends_on:
@@ -44,7 +44,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/New_York
-    volumes:
+    volumes: # idea is a torrents folder for live downloads, and a media folder for sonarr to copy the files to once finished
       - ${CONFIG_STORAGE_LOCATION}/arr/sonarr:/config
       - ${arr_shows_dir}:/downloads/media
     restart: on-failure
