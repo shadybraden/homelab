@@ -30,7 +30,7 @@ services:
     volumes: # idea is a torrents folder for live downloads, and a media folder for radarr to copy the files to once finished
       - ${CONFIG_STORAGE_LOCATION}/arr/radarr:/config
       - ${arr_movies_dir}/torrents:/data/downloads
-      - ${arr_movies_dir}/media:/data/downloads
+      - ${arr_movies_dir}/media:/movies
     restart: on-failure
 #    network_mode: service:gluetun_arr
 #    depends_on:
