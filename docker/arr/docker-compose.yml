@@ -29,7 +29,8 @@ services:
       - PORT=7878 #optional
     volumes: # idea is a torrents folder for live downloads, and a media folder for radarr to copy the files to once finished
       - ${CONFIG_STORAGE_LOCATION}/arr/radarr:/config
-      - ${arr_movies_dir}:/downloads
+      - ${arr_movies_dir}/torrents:/data/downloads
+      - ${arr_movies_dir}/media:/data/downloads
     restart: on-failure
 #    network_mode: service:gluetun_arr
 #    depends_on:
@@ -46,7 +47,8 @@ services:
       - TZ=America/New_York
     volumes: # idea is a torrents folder for live downloads, and a media folder for sonarr to copy the files to once finished
       - ${CONFIG_STORAGE_LOCATION}/arr/sonarr:/config
-      - ${arr_shows_dir}:/downloads/media
+      - ${arr_shows_dir}/torrents:/data/downloads
+      - ${arr_shows_dir}/media:/tv
     restart: on-failure
 #    network_mode: service:gluetun_arr
 #    depends_on:
