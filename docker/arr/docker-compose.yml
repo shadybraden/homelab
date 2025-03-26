@@ -76,7 +76,7 @@ services:
       - TORRENTING_PORT=${arr_qbittorrent_shows_port}
     volumes:
       - ${CONFIG_STORAGE_LOCATION}/arr/qbittorrent_shows:/config
-      - ${arr_shows_dir}:/downloads
+      - ${arr_shows_dir}/torrents:/downloads/torrents
     restart: on-failure
     network_mode: service:gluetun_arr
     depends_on:
@@ -93,7 +93,7 @@ services:
       - TORRENTING_PORT=${arr_qbittorrent_movies_port}
     volumes:
       - ${CONFIG_STORAGE_LOCATION}/arr/qbittorrent_movies:/config
-      - ${arr_movies_dir}:/downloads
+      - ${arr_movies_dir}/torrents:/downloads/torrents
     restart: on-failure
     network_mode: service:gluetun_arr
     depends_on:
