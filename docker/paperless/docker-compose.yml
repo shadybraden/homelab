@@ -33,3 +33,4 @@ services:
       PAPERLESS_DBHOST: db
       PAPERLESS_DBPASS: ${paperless_db_password}
       PAPERLESS_URL: ${paperless_url}
+      PAPERLESS_CSRF_TRUSTED_ORIGINS: ${paperless_url}
