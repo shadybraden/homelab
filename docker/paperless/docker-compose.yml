@@ -31,4 +31,5 @@ services:
     environment:
       PAPERLESS_REDIS: redis://broker:6379
       PAPERLESS_DBHOST: db
+      PAPERLESS_DBPASS: ${paperless_db_password}
 #      PAPERLESS_URL: ${paperless_url}
