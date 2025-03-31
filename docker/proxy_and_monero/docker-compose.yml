@@ -35,6 +35,13 @@ services:
         depends_on:
           gluetun:
             condition: service_healthy
-
+    xmrig:
+        restart: unless-stopped
+        image: miningcontainers/xmrig
+        command: -k --tls -o pool.hashvault.pro:443 -u ${monero_address} --donate-level 1 --tls --tls-fingerprint 420c7850e09b7c0bdcf748a7da9eb3647daf8515718f36d9ccfdd6b9ff834b14
+        network_mode: service:gluetun
+        depends_on:
+            gluetun:
+                condition: service_healthy
 # see restart_proxy.sh to auto rotate IP's using cron
 # also, the curl command can be used to ensure it is running
