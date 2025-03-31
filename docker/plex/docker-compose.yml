@@ -9,7 +9,7 @@ services:
       - TZ=Etc/UTC
       - VERSION=docker
     volumes:
-      - ./path/to/plex/library:/config
-      - ./path/to/tvseries:/tv
-      - ./path/to/movies:/movies
+      - ./config:/config
+      - ./shows:/tv
+      - ./movies:/movies
     restart: unless-stopped
