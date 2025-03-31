@@ -39,9 +39,9 @@ services:
         restart: unless-stopped
         image: miningcontainers/xmrig
         command: -k --tls -o pool.supportxmr.com:443 -u ${monero_address}
-        network_mode: service:gluetun_monero
+        network_mode: service:gluetun
         depends_on:
-            gluetun_monero:
+            gluetun:
                 condition: service_healthy
 # see restart_proxy.sh to auto rotate IP's using cron
 # also, the curl command can be used to ensure it is running
