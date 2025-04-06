@@ -54,6 +54,7 @@ services:
     command: ['bin/rails', 'server', '-p', '3000', '-b', '::']
     restart: on-failure
     environment:
+      APPLICATION_HOSTS: "${dawarich_host}"
       RAILS_ENV: development
       REDIS_URL: redis://dawarich_redis:6379/0
       DATABASE_HOST: dawarich_db
@@ -106,6 +107,7 @@ services:
     command: ['sidekiq']
     restart: on-failure
     environment:
+      APPLICATION_HOSTS: "${dawarich_host}"
       RAILS_ENV: development
       REDIS_URL: redis://dawarich_redis:6379/0
       DATABASE_HOST: dawarich_db
