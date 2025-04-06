@@ -9,7 +9,7 @@ services:
         image: ollama/ollama
     open-webui:
         ports:
-            - 3000:8080
+            - 3001:8080
         volumes:
             - ${CONFIG_STORAGE_LOCATION}/ai/open-webui:/app/backend/data
         container_name: open-webui
