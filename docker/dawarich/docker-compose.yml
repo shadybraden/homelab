@@ -55,6 +55,7 @@ services:
     restart: on-failure
     environment:
       APPLICATION_HOSTS: "${dawarich_host}"
+      SELF_HOSTED: "true"
       RAILS_ENV: development
       REDIS_URL: redis://dawarich_redis:6379/0
       DATABASE_HOST: dawarich_db
@@ -107,6 +108,7 @@ services:
     restart: on-failure
     environment:
       APPLICATION_HOSTS: "${dawarich_host}"
+      SELF_HOSTED: "true"
       RAILS_ENV: development
       REDIS_URL: redis://dawarich_redis:6379/0
       DATABASE_HOST: dawarich_db
