@@ -57,11 +57,10 @@ What is here:
 
 ---
 
-Migrating data note: `sudo cp -r old/data/ homelab/docker/thing` puts the entire `data` folder into the new `thing` folder. Note the placement of `/`'s
-
----
-
-###### todo:
+#### todo:
 
 - figure out how to use bitwarden cli to fetch secrets on container start
     - make it so you have to manually unlock the vault first
+- use [renovate](https://nickcunningh.am/blog/how-to-automate-version-updates-for-your-self-hosted-docker-containers-with-gitea-renovate-and-komodo) to automate updates instead of watchtower
+- use some sso authentication method
+- use traefik?
