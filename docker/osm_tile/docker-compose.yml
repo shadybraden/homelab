@@ -1,0 +1,10 @@
+services:
+    openstreetmap-tile-server:
+        ports:
+            - 8080:80
+        volumes:
+            - ./osm-data:/data/database/
+            - ./osm-tiles:/data/tiles/
+        environment:
+            - ALLOW_CORS=enabled
+        image: overv/openstreetmap-tile-server
