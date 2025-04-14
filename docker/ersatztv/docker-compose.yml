@@ -1,0 +1,12 @@
+services:
+    ersatztv:
+        container_name: ersatztv
+        environment:
+            - TZ=${time_zone}
+        ports:
+            - 8409:8409
+        volumes:
+            - ${CONFIG_STORAGE_LOCATION}/ersatztv/config:/root/.local/share/ersatztv
+            - ${jellyfin_media}:/path/to/local/media:ro
+        restart: on-failure
+        image: jasongdove/ersatztv
