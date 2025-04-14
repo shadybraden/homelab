@@ -6,7 +6,7 @@ services:
       - 5001:5001
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - homelab/docker/filebrowser/docker-compose.yml/dockge/data:/app/data
+      - ${CONFIG_STORAGE_LOCATION}/dockge/data:/app/data
       - ../:/opt/stacks
     environment:
       - DOCKGE_STACKS_DIR=/opt/stacks
