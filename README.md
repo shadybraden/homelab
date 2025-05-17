@@ -1,32 +1,10 @@
 # This is my homelab
 
-My current homelab is made up of a [mini PC](https://aoostar.com/products/aoostar-r1-2bay-nas-intel-n100-mini-pc-with-w11-pro-lpddr4-16gb-ram-512gb-ssd) running Debian, a Raspberry Pi 3, and pfsense firewall. The mini PC currently runs over 3 dozen docker containers. The Raspberry Pi (named `pi3`) runs 8, including Pi-Hole, Nginx, Wireguard and more.
+My current homelab is made up of a mini PC running Debian. However, it is an opinionated homelab and read more see below:
 
-More details found in the docker folder and under [Old Docker based homelab](#Old-Docker-based-homelab)
+https://shadybraden.com/articles/gitopshomelab/
 
-The goal is to take what I've learned from this and my knowledge of Kubernetes and combine these into a high availability homelab using GitOps and version control to manage a new shiny cluster.
-
-This is not a comprehensive guide, and expects a level of Linux experience. Things such as installing an OS, ssh, installing docker or updating packages will be treated as prerequisites. 
-
-## Table of Contents
-
-<details>
-
-<summary>Table of Contents</summary>
-
-- [Hardware](#Hardware)
-
-- [Kubernetes setup](#Kubernetes)
-
-- [Old Docker based homelab](#Old-Docker-based-homelab)
-
-</details>
-
-## Hardware
-
-The goal is to have 2x Mac Mini's running Fedora Server as k3s controllers, and 2x Intel N100 mini pc's running Fedora Server as worker nodes. 
-
-Currently this is in [testing](#Non-HA-testing-and-config), and one [Mac Mini](https://support.apple.com/en-us/112588) is the controller, and a [Dell OptiPlex 7040](https://www.dell.com/support/manuals/en-us/optiplex-7040-desktop/opti7040mt_om-v1/specifications) with a i5-6500T as the worker.
+[my compose repo](https://github.com/shadybraden/compose)
 
 ## Kubernetes
 
@@ -47,7 +25,6 @@ Currently this is in [testing](#Non-HA-testing-and-config), and one [Mac Mini](h
 	- `sudo dnf install ansible -y` 
 - use `k3s-ansible` to automate the install and setup of k3s
 	- git clone [the repo](https://github.com/k3s-io/k3s-ansible) 
-		- mine is here: https://github.com/shadybraden/homelab/tree/main/kubernetes/k3s-ansible/
 	- follow the [usage guide](https://github.com/k3s-io/k3s-ansible?tab=readme-ov-file#usage) 
 		- set server host to controller0's ip and the agent to the worker0's ip
 		- set token
@@ -55,22 +32,3 @@ Currently this is in [testing](#Non-HA-testing-and-config), and one [Mac Mini](h
 	- update: `ansible-playbook playbooks/upgrade.yml -i inventory.yml -kK`
 	- `sudo kubectl get nodes` from `controller0`.....eyyy all nodes there
 		- in theory, add another node's ip to the inventory.yml and that should add it as a thing.
-- test install Vaultwarden
-	- using this: https://github.com/guerzon/vaultwarden
-	- on `controller0` - `helm repo add vaultwarden https://guerzon.github.io/vaultwarden`
-
-
-
-todo:
-load balancer and ssl certs - Traefik? *istio?*
-helm? helmfile? something else?
-ArgoCD woo
-how to convert a normal docker container into k3s? where storage?
-
-## Old Docker based homelab
-
-This is currently running on an [N100 mini pc](https://aoostar.com/products/aoostar-r1-2bay-nas-intel-n100-mini-pc-with-w11-pro-lpddr4-16gb-ram-512gb-ssd).
-This pc uses Debian and docker to deploy over 3 dozen services.
-A raspberry pi is setup to run Pi-Hole as a DNS server and Nginx.
-
-See the [docker folder](docker#docker-compose-based-homelab) for more info.
