@@ -8,6 +8,8 @@ https://shadybraden.com/articles/gitopshomelab/
 
 ## Kubernetes
 
+***this is incomplete***
+
 ### Goals
 
 - HA k3s (mac minis as control plane and N100's as workers).
