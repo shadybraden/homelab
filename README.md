@@ -10,6 +10,8 @@ https://shadybraden.com/articles/gitopshomelab/
 
 ***this is incomplete***
 
+[convert compose.yaml to Kubernetes compatable](https://github.com/kubernetes/kompose)
+
 ### Goals
 
 - HA k3s (mac minis as control plane and N100's as workers).
