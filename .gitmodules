@@ -1,0 +1,6 @@
+[submodule "IaC"]
+	path = IaC
+	url = ssh://git@git.holmlab.org/shady/IaC.git
+[submodule "compose"]
+	path = compose
+	url = ssh://git@git.holmlab.org/shady/compose.git
