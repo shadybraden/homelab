@@ -1,8 +1,8 @@
-# This is my Homelab (or Holmlab :) )
+# This is the home for my Homelab (or Holmlab :) )
 
-See `compose/` for my docker compose configs and files
+See my `compose` repo for my docker compose configs and files ([Github](https://github.com/shadybraden/compose) | [Codeberg](https://codeberg.org/shadybraden/compose))
 
-See `IaC/` for my IaC, Ansible and Actions
+See `IaC` for my IaC, Ansible and Actions ([Github](https://github.com/shadybraden/IaC) | [Codeberg](https://codeberg.org/shadybraden/IaC))
 
 ---
 
