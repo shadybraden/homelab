@@ -23,7 +23,7 @@ Go to "[mounts](https://192.168.50.1/cgi-bin/luci/admin/system/mounts) in the we
 - Choose the mount point. We want docker images and volumes to live on this drive, so type in `/opt`
 - Save!
 - Apply and Save!
-- Make a backup
+- Make a backup: https://192.168.50.1/cgi-bin/luci/admin/system/flash
 
 ## Docker time!
 
@@ -57,3 +57,10 @@ Check that nothing is using port 53:
 
 inter-docker internet access needs `network_mode: host`
 
+# Edit DNS in Luci:
+
+- Network>Interfaces>`wan` Edit>Advanced Settings>Use custom DNS servers>`192.168.50.1` 
+- Network>Interfaces>`lan` Edit>Advanced Settings>Use custom DNS servers>`192.168.50.1` 
+- Network>Interfaces>`lan` Edit>DHCP Settings>DHCP-Options>`6,192.168.50.1` 
+- Save & Apply
+- Make a backup: https://192.168.50.1/cgi-bin/luci/admin/system/flash
